@@ -33,8 +33,8 @@ def main():
             shutil.move(os.path.join(root, file), f"./Data/{counter}")
             os.rename(f"Data/{counter}/{file}", f"Data/{counter}/musics.mp3")
     
-    files = open("metadata.js", 'w+')
-    files.write("const metadata = {\n" + final_data + "\n}")
+    files = open("./Data/metadata.js", 'w+')
+    files.write(f"const max_music = {counter}\n\n" + "const metadata = {\n" + final_data + "\n}")
     files.close()
     
     return
